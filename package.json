@@ -1,6 +1,6 @@
 {
   "name": "threejs-particle-waypoint",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "Particle waypoint module for three.js",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
@@ -25,6 +25,9 @@
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2"
   },
+  "dependencies": {
+    "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
+  },
   "scripts": {
     "build": "npm run prettier:src && tsc && npm run babel && npm run doc",
     "prettier:src": "prettier --write './!(bin|docs)/**/*.{js,ts,json}' ",
@@ -43,8 +46,5 @@
     "hooks": {
       "pre-commit": "npm run prettier:src && tsc && npm run babel"
     }
-  },
-  "dependencies": {
-    "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
   }
 }

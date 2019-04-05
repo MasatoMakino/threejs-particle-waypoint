@@ -95,9 +95,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticle_.threeparticle.html#ease" class="tsd-kind-icon">ease</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_threeparticle_.threeparticle.html#parent" class="tsd-kind-icon">parent</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_threeparticle_.threeparticle.html#path" class="tsd-kind-icon">path</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticle_.threeparticle.html#pathposition" class="tsd-kind-icon">path<wbr>Position</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticle_.threeparticle.html#ratio" class="tsd-kind-icon">ratio</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_threeparticle_.threeparticle.html#sprite" class="tsd-kind-icon">sprite</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticle_.threeparticle.html#visible" class="tsd-kind-icon">visible</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-static"><a href="_threeparticle_.threeparticle.html#loader" class="tsd-kind-icon">loader</a></li>
@@ -128,13 +129,22 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Particle.__constructor</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:5</li>
+									<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:11</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>指定されたパスに沿って移動するパーティクルを生成する。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>path: <span class="tsd-signature-type">ParticleWay</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_threeparticle_.threeparticle.html" class="tsd-signature-type">ThreeParticle</a></h4>
@@ -144,13 +154,45 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="ease" class="tsd-anchor"></a>
+					<h3>ease</h3>
+					<div class="tsd-signature tsd-kind-icon">ease<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Particle.ease</p>
+						<ul>
+							<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:11</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>number<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>number: <span class="tsd-signature-type">any</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="parent" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> parent</h3>
 					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object3D</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in ThreeParticle.ts:13</li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/286e972/src/ThreeParticle.ts#L13">ThreeParticle.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,20 +203,30 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Particle.path</p>
 						<ul>
-							<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:4</li>
+							<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:9</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="pathposition" class="tsd-anchor"></a>
-					<h3>path<wbr>Position</h3>
-					<div class="tsd-signature tsd-kind-icon">path<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="ratio" class="tsd-anchor"></a>
+					<h3>ratio</h3>
+					<div class="tsd-signature tsd-kind-icon">ratio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from Particle.pathPosition</p>
+						<p>Inherited from Particle.ratio</p>
 						<ul>
-							<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:9</li>
+							<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:32</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>現在位置を取得する</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>returns</dt>
+							<dd><p>number</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="sprite" class="tsd-anchor"></a>
@@ -182,7 +234,7 @@
 					<div class="tsd-signature tsd-kind-icon">sprite<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Sprite</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in ThreeParticle.ts:11</li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/286e972/src/ThreeParticle.ts#L11">ThreeParticle.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -193,7 +245,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Particle.visible</p>
 						<ul>
-							<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:10</li>
+							<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:33</li>
 						</ul>
 					</aside>
 				</section>
@@ -203,7 +255,7 @@
 					<div class="tsd-signature tsd-kind-icon">loader<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TextureLoader</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in ThreeParticle.ts:12</li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/286e972/src/ThreeParticle.ts#L12">ThreeParticle.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -214,23 +266,31 @@
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from Particle.add</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:8</li>
+									<li>Defined in node_modules/particle-waypoint/bin/Particle.d.ts:27</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>パーティクル位置を指定された量移動する。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>t: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>移動量</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -245,7 +305,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Particle.dispose</p>
 								<ul>
-									<li>Defined in ThreeParticle.ts:43</li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/286e972/src/ThreeParticle.ts#L44">ThreeParticle.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -262,7 +322,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in ThreeParticle.ts:15</li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/286e972/src/ThreeParticle.ts#L15">ThreeParticle.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -285,14 +345,14 @@
 					<a name="update" class="tsd-anchor"></a>
 					<h3>update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides Particle.update</p>
 								<ul>
-									<li>Defined in ThreeParticle.ts:37</li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/286e972/src/ThreeParticle.ts#L37">ThreeParticle.ts:37</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -301,7 +361,7 @@
 									<h5>t: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -337,6 +397,9 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 								<a href="_threeparticle_.threeparticle.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_threeparticle_.threeparticle.html#ease" class="tsd-kind-icon">ease</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 								<a href="_threeparticle_.threeparticle.html#parent" class="tsd-kind-icon">parent</a>
 							</li>
@@ -344,7 +407,7 @@
 								<a href="_threeparticle_.threeparticle.html#path" class="tsd-kind-icon">path</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_threeparticle_.threeparticle.html#pathposition" class="tsd-kind-icon">path<wbr>Position</a>
+								<a href="_threeparticle_.threeparticle.html#ratio" class="tsd-kind-icon">ratio</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 								<a href="_threeparticle_.threeparticle.html#sprite" class="tsd-kind-icon">sprite</a>

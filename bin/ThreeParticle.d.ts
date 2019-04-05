@@ -5,7 +5,7 @@ export declare class ThreeParticle extends Particle {
     protected static loader: TextureLoader;
     protected parent: Object3D;
     init(parent: Object3D, texturePath: string, scale: number): void;
-    update(t: number): void;
+    update(t: number): number;
     dispose(): void;
 }
 //# sourceMappingURL=ThreeParticle.d.ts.map

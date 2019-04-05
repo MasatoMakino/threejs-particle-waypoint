@@ -8,8 +8,8 @@ export class ThreeParticleGenerator extends ParticleGenerator {
         this.scale = scale;
     }
     generateParticle(path) {
-        const pathParticle = new ThreeParticle(this.path);
-        pathParticle.init(this.parent, this.texturePath, this.scale);
-        return pathParticle;
+        const particle = new ThreeParticle(this.path);
+        particle.init(this.parent, this.texturePath, this.scale);
+        return particle;
     }
 }

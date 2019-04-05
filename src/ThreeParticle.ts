@@ -34,10 +34,11 @@ export class ThreeParticle extends Particle {
     this.parent.add(this.sprite);
   }
 
-  update(t: number): void {
-    super.update(t);
-    const pos = this.path.getPoint(t);
+  update(t: number): number {
+    const n = super.update(t);
+    const pos = this.path.getPoint(n);
     this.sprite.position.set(pos[0], pos[1], pos[2]);
+    return n;
   }
 
   dispose(): void {
