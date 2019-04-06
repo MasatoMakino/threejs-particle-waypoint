@@ -59,7 +59,7 @@ const initWaypoint = () => {
       isLoop: true
     }
   );
-  // generator.generateAll();
+  generator.setInterval(0.08, 60);
   generator.play();
 };
 
