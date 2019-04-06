@@ -1,8 +1,8 @@
 import { ThreeParticle } from "./ThreeParticle";
 import { ParticleGenerator } from "particle-waypoint";
 export class ThreeParticleGenerator extends ParticleGenerator {
-    constructor(parent, path, texturePath, scale) {
-        super(path);
+    constructor(parent, path, texturePath, scale, option) {
+        super(path, option);
         this.parent = parent;
         this.texturePath = texturePath;
         this.scale = scale;

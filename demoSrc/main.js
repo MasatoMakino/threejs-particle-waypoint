@@ -50,8 +50,16 @@ const initWaypoint = () => {
     [0.0, 10.0, 30.0]
   ]);
 
-  const generator = new ThreeParticleGenerator(scene, path, "./map.png", 0.005);
-  generator.generateAll();
+  const generator = new ThreeParticleGenerator(
+    scene,
+    path,
+    "./map.png",
+    0.005,
+    {
+      isLoop: true
+    }
+  );
+  // generator.generateAll();
   generator.play();
 };
 

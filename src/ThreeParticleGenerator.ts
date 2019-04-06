@@ -1,6 +1,7 @@
 import { Object3D } from "three";
 import { ThreeParticle } from "./ThreeParticle";
 import { ParticleGenerator, ParticleWay, Particle } from "particle-waypoint";
+import { ParticleGeneratorOption } from "particle-waypoint";
 
 export class ThreeParticleGenerator extends ParticleGenerator {
   protected parent: Object3D;
@@ -11,9 +12,10 @@ export class ThreeParticleGenerator extends ParticleGenerator {
     parent: Object3D,
     path: ParticleWay,
     texturePath: string,
-    scale: number
+    scale: number,
+    option: ParticleGeneratorOption
   ) {
-    super(path);
+    super(path, option);
     this.parent = parent;
     this.texturePath = texturePath;
     this.scale = scale;
