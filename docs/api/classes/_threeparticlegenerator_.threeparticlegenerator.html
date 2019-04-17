@@ -102,6 +102,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#path" class="tsd-kind-icon">path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_threeparticlegenerator_.threeparticlegenerator.html#scale" class="tsd-kind-icon">scale</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#speedpersec" class="tsd-kind-icon">speed<wbr>Per<wbr>Sec</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_threeparticlegenerator_.threeparticlegenerator.html#texturecounter" class="tsd-kind-icon">texture<wbr>Counter</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_threeparticlegenerator_.threeparticlegenerator.html#texturepath" class="tsd-kind-icon">texture<wbr>Path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
@@ -111,7 +112,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#closevalve" class="tsd-kind-icon">close<wbr>Valve</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#dispose" class="tsd-kind-icon">dispose</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#generateall" class="tsd-kind-icon">generate<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_threeparticlegenerator_.threeparticlegenerator.html#generateall" class="tsd-kind-icon">generate<wbr>All</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_threeparticlegenerator_.threeparticlegenerator.html#generateparticle" class="tsd-kind-icon">generate<wbr>Particle</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#openvalve" class="tsd-kind-icon">open<wbr>Valve</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_threeparticlegenerator_.threeparticlegenerator.html#play" class="tsd-kind-icon">play</a></li>
@@ -132,14 +133,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Three<wbr>Particle<wbr>Generator<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object3D</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParticleWay</span>, texturePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, option<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParticleGeneratorOption</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_threeparticlegenerator_.threeparticlegenerator.html" class="tsd-signature-type">ThreeParticleGenerator</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Three<wbr>Particle<wbr>Generator<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object3D</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParticleWay</span>, texturePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, scale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, option<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParticleGeneratorOption</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_threeparticlegenerator_.threeparticlegenerator.html" class="tsd-signature-type">ThreeParticleGenerator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides ParticleGenerator.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e245ac5/src/ThreeParticleGenerator.ts#L9">ThreeParticleGenerator.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e07ae6c/src/ThreeParticleGenerator.ts#L10">ThreeParticleGenerator.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -151,7 +152,7 @@
 									<h5>path: <span class="tsd-signature-type">ParticleWay</span></h5>
 								</li>
 								<li>
-									<h5>texturePath: <span class="tsd-signature-type">string</span></h5>
+									<h5>texturePath: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
 									<h5>scale: <span class="tsd-signature-type">number</span></h5>
@@ -216,7 +217,7 @@
 					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object3D</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e245ac5/src/ThreeParticleGenerator.ts#L7">ThreeParticleGenerator.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e07ae6c/src/ThreeParticleGenerator.ts#L7">ThreeParticleGenerator.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -248,7 +249,7 @@
 					<div class="tsd-signature tsd-kind-icon">scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e245ac5/src/ThreeParticleGenerator.ts#L9">ThreeParticleGenerator.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e07ae6c/src/ThreeParticleGenerator.ts#L9">ThreeParticleGenerator.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -264,12 +265,22 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="texturepath" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> texture<wbr>Path</h3>
-					<div class="tsd-signature tsd-kind-icon">texture<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="texturecounter" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> texture<wbr>Counter</h3>
+					<div class="tsd-signature tsd-kind-icon">texture<wbr>Counter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e245ac5/src/ThreeParticleGenerator.ts#L8">ThreeParticleGenerator.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e07ae6c/src/ThreeParticleGenerator.ts#L10">ThreeParticleGenerator.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="texturepath" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> texture<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">texture<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e07ae6c/src/ThreeParticleGenerator.ts#L8">ThreeParticleGenerator.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -334,25 +345,20 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="generateall" class="tsd-anchor"></a>
 					<h3>generate<wbr>All</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">generate<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from ParticleGenerator.generateAll</p>
+								<p>Overrides ParticleGenerator.generateAll</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:82</li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e07ae6c/src/ThreeParticleGenerator.ts#L41">ThreeParticleGenerator.ts:41</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>経路上にパーティクルを敷き詰める。</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -368,7 +374,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides ParticleGenerator.generateParticle</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e245ac5/src/ThreeParticleGenerator.ts#L24">ThreeParticleGenerator.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/threejs-particle-waypoint/blob/e07ae6c/src/ThreeParticleGenerator.ts#L30">ThreeParticleGenerator.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -684,6 +690,9 @@
 								<a href="_threeparticlegenerator_.threeparticlegenerator.html#speedpersec" class="tsd-kind-icon">speed<wbr>Per<wbr>Sec</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_threeparticlegenerator_.threeparticlegenerator.html#texturecounter" class="tsd-kind-icon">texture<wbr>Counter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 								<a href="_threeparticlegenerator_.threeparticlegenerator.html#texturepath" class="tsd-kind-icon">texture<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -695,7 +704,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_threeparticlegenerator_.threeparticlegenerator.html#dispose" class="tsd-kind-icon">dispose</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_threeparticlegenerator_.threeparticlegenerator.html#generateall" class="tsd-kind-icon">generate<wbr>All</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">

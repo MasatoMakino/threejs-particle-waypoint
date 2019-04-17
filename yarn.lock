@@ -3848,8 +3848,8 @@ parseurl@~1.3.2:
   integrity sha1-/CidTtiZMRlGDBViUyYs3I3mW/M=
 
 "particle-waypoint@https://github.com/MasatoMakino/particle-waypoint.git":
-  version "0.2.5"
-  resolved "https://github.com/MasatoMakino/particle-waypoint.git#99b0aa0e1b01831952b604e2e2663795f6f6c50e"
+  version "0.2.6"
+  resolved "https://github.com/MasatoMakino/particle-waypoint.git#51448f4b7222fbf9041cf27ab658bb4c6f9f662b"
 
 pascalcase@^0.1.1:
   version "0.1.1"

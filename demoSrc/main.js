@@ -53,13 +53,13 @@ const initWaypoint = () => {
   const generator = new ThreeParticleGenerator(
     scene,
     path,
-    "./map.png",
+    ["./map01.png", "./map02.png", "./map03.png", "./map04.png"],
     0.005,
     {
       isLoop: true
     }
   );
-  generator.setInterval(0.08, 60);
+  generator.setInterval(0.08, 4 * 8);
   generator.play();
 };
 

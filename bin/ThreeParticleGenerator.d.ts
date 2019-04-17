@@ -3,9 +3,11 @@ import { ParticleGenerator, ParticleWay, Particle } from "particle-waypoint";
 import { ParticleGeneratorOption } from "particle-waypoint";
 export declare class ThreeParticleGenerator extends ParticleGenerator {
     protected parent: Object3D;
-    protected texturePath: string;
+    protected texturePath: string[];
     protected scale: number;
-    constructor(parent: Object3D, path: ParticleWay, texturePath: string, scale: number, option: ParticleGeneratorOption);
+    protected textureCounter: number;
+    constructor(parent: Object3D, path: ParticleWay, texturePath: string | string[], scale: number, option: ParticleGeneratorOption);
     protected generateParticle(path: ParticleWay): Particle;
+    generateAll(): void;
 }
 //# sourceMappingURL=ThreeParticleGenerator.d.ts.map
