@@ -1,6 +1,6 @@
 {
   "name": "threejs-particle-waypoint",
-  "version": "0.2.6",
+  "version": "0.3.2",
   "description": "Particle waypoint module for three.js",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
@@ -38,7 +38,7 @@
     "doc": "npm run doc:generate && npm run doc:replaceNode && npm run doc:card",
     "doc:generate": "typedoc --tsconfig tsdocconfig.json src",
     "doc:replaceNode": "node ./task/replaceAPI.js",
-    "doc:card": "repoimg -n MasatoMakino/createjs-particle-waypoint -o ./docs/card.png"
+    "doc:card": "repoimg -n MasatoMakino/threejs-particle-waypoint -o ./docs/card.png"
   },
   "husky": {
     "hooks": {
