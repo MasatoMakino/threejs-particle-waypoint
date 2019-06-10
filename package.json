@@ -27,7 +27,7 @@
   },
   "scripts": {
     "build": "npm run prettier:src && tsc && npm run babel && npm run doc",
-    "prettier:src": "prettier --write './!(bin|docs)/**/*.{js,ts,json}' ",
+    "prettier:src": "prettier --write './!(bin|docs|coverage)/**/*.{js,ts,json}' ",
     "watch": "npm run watch:tsc | npm run watch:babel | npm run watch:server ",
     "watch:tsc": "tsc -w",
     "babel": "webpack --mode development --module-bind js=babel-loader ./demoSrc/main.js --output ./docs/demo/bundle.js",
@@ -41,7 +41,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier:src && tsc && npm run babel"
+      "pre-commit": "npm run prettier:src"
     }
   }
 }
