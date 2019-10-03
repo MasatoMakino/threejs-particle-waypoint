@@ -6,7 +6,7 @@ export declare class ThreeParticleGenerator extends ParticleGenerator {
     protected texturePath: string[];
     protected scale: number;
     protected textureCounter: number;
-    constructor(parent: Object3D, path: ParticleWay, texturePath: string | string[], scale: number, option: ParticleGeneratorOption);
+    constructor(parent: Object3D, path: ParticleWay | ParticleWay[], texturePath: string | string[], scale: number, option: ParticleGeneratorOption);
     protected generateParticle(path: ParticleWay): Particle;
     generateAll(): void;
 }

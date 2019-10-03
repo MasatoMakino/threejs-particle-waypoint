@@ -14,7 +14,7 @@ export class ThreeParticleGenerator extends ParticleGenerator {
         }
     }
     generateParticle(path) {
-        const particle = new ThreeParticle(this.path);
+        const particle = new ThreeParticle(path);
         particle.init(this.parent, this.texturePath[this.textureCounter], this.scale);
         this.textureCounter = (this.textureCounter += 1) % this.texturePath.length;
         return particle;
