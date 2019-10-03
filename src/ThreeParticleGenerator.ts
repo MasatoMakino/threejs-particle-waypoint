@@ -11,7 +11,7 @@ export class ThreeParticleGenerator extends ParticleGenerator {
 
   constructor(
     parent: Object3D,
-    path: ParticleWay,
+    path: ParticleWay | ParticleWay[],
     texturePath: string | string[],
     scale: number,
     option: ParticleGeneratorOption
@@ -28,7 +28,7 @@ export class ThreeParticleGenerator extends ParticleGenerator {
   }
 
   protected generateParticle(path: ParticleWay): Particle {
-    const particle = new ThreeParticle(this.path);
+    const particle = new ThreeParticle(path);
     particle.init(
       this.parent,
       this.texturePath[this.textureCounter],
