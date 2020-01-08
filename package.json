@@ -1,9 +1,14 @@
 {
   "name": "threejs-particle-waypoint",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "description": "Particle waypoint module for three.js",
-  "main": "./bin/index.js",
-  "types": "./bin/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "module": "./esm/index.js",
+  "files": [
+    "lib",
+    "esm"
+  ],
   "repository": "https://MasatoMakino@github.com/MasatoMakino/threejs-particle-waypoint.git",
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
@@ -13,17 +18,17 @@
     "gulptask-dev-server": "https://github.com/MasatoMakino/gulptask-dev-server.git",
     "gulptask-tsc": "https://github.com/MasatoMakino/gulptask-tsc.git",
     "gulptask-tsdoc": "https://github.com/MasatoMakino/gulptask-tsdoc.git",
-    "husky": "^3.1.0",
+    "husky": "^4.0.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
-    "three": "^0.111.0",
-    "typescript": "^3.7.3"
+    "three": "^0.112.1",
+    "typescript": "^3.7.4"
   },
   "dependencies": {
     "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
   },
   "peerDependencies": {
-    "three": "^0.111.0"
+    "three": "^0.112.1"
   },
   "scripts": {
     "start:dev": "gulp start_dev",
