@@ -6,7 +6,7 @@ import {
   WebGLRenderer
 } from "three";
 import { ParticleWay } from "particle-waypoint";
-import { ThreeParticleGenerator } from "../bin/index";
+import { ThreeParticleGenerator } from "../esm/";
 
 const W = 1920;
 const H = 1080;
