@@ -1,6 +1,6 @@
 {
   "name": "threejs-particle-waypoint",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Particle waypoint module for three.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -18,11 +18,11 @@
     "gulptask-dev-server": "https://github.com/MasatoMakino/gulptask-dev-server.git",
     "gulptask-tsc": "https://github.com/MasatoMakino/gulptask-tsc.git",
     "gulptask-tsdoc": "https://github.com/MasatoMakino/gulptask-tsdoc.git",
-    "husky": "^4.0.1",
-    "prettier": "^1.19.1",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "three": "^0.112.1",
-    "typescript": "^3.7.4"
+    "three": "^0.115.0",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
