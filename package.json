@@ -1,6 +1,6 @@
 {
   "name": "threejs-particle-waypoint",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Particle waypoint module for three.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -21,8 +21,8 @@
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "three": "^0.115.0",
-    "typescript": "^3.8.3"
+    "three": "^0.118.3",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
