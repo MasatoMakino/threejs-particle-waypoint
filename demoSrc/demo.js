@@ -3,13 +3,13 @@ import {
   Color,
   PerspectiveCamera,
   Scene,
-  WebGLRenderer
+  WebGLRenderer,
 } from "three";
 import { ParticleWay } from "particle-waypoint";
-import { ThreeParticleGenerator } from "../esm/";
+import { ThreeParticleGenerator } from "../";
 
-const W = 1920;
-const H = 1080;
+const W = 800;
+const H = 600;
 let renderer;
 let scene;
 let camera;
@@ -25,12 +25,12 @@ const initScene = () => {
   // シーンを作成
   scene = new Scene();
   camera = new PerspectiveCamera(45, W / H, 1, 400);
-  camera.position.set(0, 0, 100);
+  camera.position.set(0, 0, 50);
   scene.add(camera);
 
   const renderOption = {
     canvas: document.getElementById("webgl-canvas"),
-    antialias: true
+    antialias: true,
   };
   renderer = new WebGLRenderer(renderOption);
   renderer.setClearColor(new Color(0x000000));
@@ -46,8 +46,10 @@ const initWaypoint = () => {
   const path = new ParticleWay([
     [0.0, 0.0, 0.0],
     [0.0, 10.0, 0.0],
+    [10.0, 10.0, 0.0],
     [10.0, 10.0, 10.0],
-    [0.0, 10.0, 30.0]
+    [0.0, 10.0, 10.0],
+    [10.0, 0.0, 10.0],
   ]);
 
   const generator = new ThreeParticleGenerator(
@@ -56,7 +58,7 @@ const initWaypoint = () => {
     ["./map01.png", "./map02.png", "./map03.png", "./map04.png"],
     0.005,
     {
-      isLoop: true
+      isLoop: true,
     }
   );
   generator.setInterval(0.08, 4 * 8);
