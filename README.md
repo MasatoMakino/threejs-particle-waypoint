@@ -5,7 +5,7 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b14e7ead3dfae70d1e3f/maintainability)](https://codeclimate.com/github/MasatoMakino/threejs-particle-waypoint/maintainability)
 
-[Github repository](https://github.com/MasatoMakino/threejs-particle-waypoint.git)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=MasatoMakino&repo=threejs-particle-waypoint&show_owner=true)](https://github.com/MasatoMakino/threejs-particle-waypoint)
 
 ## Demo
 

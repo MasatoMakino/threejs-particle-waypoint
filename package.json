@@ -33,7 +33,6 @@
   "scripts": {
     "start:dev": "gulp start_dev",
     "build": "gulp build",
-    "doc:card": "repoimg -n MasatoMakino/threejs-particle-waypoint -o ./docs/card.png",
     "checkout:docs": "git checkout HEAD ./docs/"
   },
   "husky": {
