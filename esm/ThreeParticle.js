@@ -1,4 +1,4 @@
-import { TextureLoader, Sprite, SpriteMaterial } from "three";
+import { Sprite, SpriteMaterial, TextureLoader, } from "three";
 import { Particle } from "particle-waypoint";
 export class ThreeParticle extends Particle {
     init(parent, texturePath, scale) {
@@ -13,7 +13,7 @@ export class ThreeParticle extends Particle {
         });
         const mat = new SpriteMaterial({
             map: map,
-            depthTest: false
+            depthTest: false,
         });
         this.sprite = new Sprite(mat);
         this.parent.add(this.sprite);

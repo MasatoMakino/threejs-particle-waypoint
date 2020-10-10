@@ -1,4 +1,4 @@
-import { TextureLoader, Object3D, Sprite } from "three";
+import { Object3D, Sprite, TextureLoader } from "three";
 import { Particle } from "particle-waypoint";
 export declare class ThreeParticle extends Particle {
     protected sprite: Sprite;

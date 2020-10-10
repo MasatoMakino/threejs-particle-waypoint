@@ -1,5 +1,5 @@
 import { Object3D } from "three";
-import { ParticleGenerator, ParticleWay, Particle } from "particle-waypoint";
+import { Particle, ParticleGenerator, ParticleWay } from "particle-waypoint";
 import { ParticleGeneratorOption } from "particle-waypoint";
 export declare class ThreeParticleGenerator extends ParticleGenerator {
     protected parent: Object3D;
