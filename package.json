@@ -28,7 +28,7 @@
     "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
   },
   "peerDependencies": {
-    "three": "^0.112.1"
+    "three": "^0.121.1"
   },
   "scripts": {
     "start:dev": "gulp start_dev",
