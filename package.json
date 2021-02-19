@@ -1,6 +1,6 @@
 {
   "name": "threejs-particle-waypoint",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Particle waypoint module for three.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
