@@ -26,7 +26,7 @@ export class ParticleWayBuilder {
             let pathName = "";
             let currentPath;
             const pathArray = [];
-            lines.forEach(line => {
+            lines.forEach((line) => {
                 const type = this.getType(line);
                 const value = this.getValue(line);
                 switch (type) {
@@ -36,7 +36,7 @@ export class ParticleWayBuilder {
                         pathName = value[0];
                         break;
                     case OBJLineType.VALUE:
-                        const points = value.map(val => {
+                        const points = value.map((val) => {
                             return parseFloat(val);
                         });
                         currentPath.push(points);
@@ -62,7 +62,7 @@ export class ParticleWayBuilder {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield fetch(objFilePath);
             const txt = yield response.text();
-            const lines = txt.split(/\r\n|\r|\n/).filter(val => {
+            const lines = txt.split(/\r\n|\r|\n/).filter((val) => {
                 return val.length > 0;
             });
             return lines;
