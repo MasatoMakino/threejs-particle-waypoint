@@ -3,7 +3,7 @@ import { ParticleWay } from "particle-waypoint";
 export enum OBJLineType {
   COMMENT = "#",
   NAME = "o",
-  VALUE = "v"
+  VALUE = "v",
 }
 
 export class ParticleWayBuilder {
@@ -19,7 +19,7 @@ export class ParticleWayBuilder {
     let currentPath: number[][];
     const pathArray: ParticleWay[] = [];
 
-    lines.forEach(line => {
+    lines.forEach((line) => {
       const type = this.getType(line);
       const value = this.getValue(line);
 
@@ -30,7 +30,7 @@ export class ParticleWayBuilder {
           pathName = value[0];
           break;
         case OBJLineType.VALUE:
-          const points = value.map(val => {
+          const points = value.map((val) => {
             return parseFloat(val);
           });
           currentPath.push(points);
@@ -62,7 +62,7 @@ export class ParticleWayBuilder {
   private static async getText(objFilePath: string) {
     const response = await fetch(objFilePath);
     const txt = await response.text();
-    const lines: string[] = txt.split(/\r\n|\r|\n/).filter(val => {
+    const lines: string[] = txt.split(/\r\n|\r|\n/).filter((val) => {
       return val.length > 0;
     });
     return lines;
