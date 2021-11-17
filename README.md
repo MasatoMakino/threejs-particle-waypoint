@@ -13,7 +13,7 @@
 
 ## API documents
 
-[API documents](https://masatomakino.github.io/threejs-particle-waypoint/api/)
+[API documents](https://masatomakino.github.io/threejs-particle-waypoint/api/index.html)
 
 ## License
 
