@@ -5,7 +5,7 @@ import {
   Scene,
   WebGLRenderer,
 } from "three";
-import { GenerationMode, ParticleWay } from "particle-waypoint";
+import { GenerationMode, ParticleWay } from "@masatomakino/particle-waypoint";
 import { ThreeParticleGenerator } from "../";
 
 const W = 800;

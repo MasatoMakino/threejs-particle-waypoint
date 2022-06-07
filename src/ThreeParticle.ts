@@ -5,7 +5,7 @@ import {
   Texture,
   TextureLoader,
 } from "three";
-import { Particle } from "particle-waypoint";
+import { Particle } from "@masatomakino/particle-waypoint";
 
 export class ThreeParticle extends Particle {
   protected sprite: Sprite;
