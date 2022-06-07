@@ -1,7 +1,11 @@
 import { Object3D } from "three";
 import { ThreeParticle } from "./ThreeParticle";
-import { Particle, ParticleGenerator, ParticleWay } from "particle-waypoint";
-import { ParticleGeneratorOption } from "particle-waypoint";
+import {
+  Particle,
+  ParticleGenerator,
+  ParticleWay,
+} from "@masatomakino/particle-waypoint";
+import { ParticleGeneratorOption } from "@masatomakino/particle-waypoint";
 
 export class ThreeParticleGenerator extends ParticleGenerator {
   protected parent: Object3D;

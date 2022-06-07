@@ -1,4 +1,4 @@
-import { ParticleWay } from "particle-waypoint";
+import { ParticleWay } from "@masatomakino/particle-waypoint";
 
 export enum OBJLineType {
   COMMENT = "#",
