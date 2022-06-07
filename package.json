@@ -35,10 +35,10 @@
   "scripts": {
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
     "build": "npm run buildTS && npm run demo",
-    "demo": "npx gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"1280\" height=\"768\"></canvas>'",
+    "demo": "npx @masatomakino/gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"1280\" height=\"768\"></canvas>'",
     "buildTS": "npx tsc --project tsconfig.json & npx tsc --project tsconfig.esm.json",
     "typedocs": "npx typedoc --out ./docs/api src/index.ts",
-    "server": "npx gulptask-dev-server -b ./docs/demo",
+    "server": "npx @masatomakino/gulptask-dev-server -b ./docs/demo",
     "watch:demo": "npm run demo -- -W",
     "watch:tsc": "tsc -W --incremental --project tsconfig.json & tsc -W --incremental --project tsconfig.esm.json"
   },
