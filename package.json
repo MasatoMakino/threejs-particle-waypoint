@@ -42,11 +42,6 @@
     "watch:demo": "npm run demo -- -W",
     "watch:tsc": "tsc -W --incremental --project tsconfig.json & tsc -W --incremental --project tsconfig.esm.json"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "bugs": {
     "url": "https://github.com/MasatoMakino/threejs-particle-waypoint/issues"
   },
