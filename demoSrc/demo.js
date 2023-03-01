@@ -5,7 +5,7 @@ import {
   Scene,
   WebGLRenderer,
 } from "three";
-import { GenerationMode, ParticleWay } from "@masatomakino/particle-waypoint";
+import { ParticleWay } from "@masatomakino/particle-waypoint";
 import { ThreeParticleGenerator } from "../";
 
 const W = 800;
@@ -58,7 +58,7 @@ const initWaypoint = () => {
     ["./map01.png", "./map02.png", "./map03.png", "./map04.png"],
     0.005,
     {
-      generationMode: GenerationMode.LOOP,
+      generationMode: "loop",
     }
   );
   generator.animator.setGenerationInterval(0.08, 4 * 8);
