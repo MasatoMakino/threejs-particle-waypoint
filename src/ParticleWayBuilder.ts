@@ -6,6 +6,9 @@ export enum OBJLineType {
   VALUE = "v",
 }
 
+/**
+ * @deprecated
+ */
 export class ParticleWayBuilder {
   /**
    *  指定されたOBJファイルから、ParticleWayの配列を取り出す。
