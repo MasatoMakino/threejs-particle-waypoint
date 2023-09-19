@@ -14,9 +14,7 @@ const getGenerator = () => {
     particleWay,
     "../demoSrc/map01.png",
     1,
-    {
-      generationMode: "loop",
-    }
+    {}
   );
   return { generator, parent };
 };
