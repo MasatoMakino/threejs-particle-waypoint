@@ -60,7 +60,7 @@ export class ParticleWayBuilder {
   }
 
   private static async getText(objFilePath: string) {
-    const response = await fetch(objFilePath);
+    const response = await global.fetch(objFilePath);
     const txt = await response.text();
     const lines: string[] = txt.split(/\r\n|\r|\n/).filter((val) => {
       return val.length > 0;
