@@ -16,9 +16,8 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run buildTS
+      - run: npm run coverage
       - name: Code Climate Coverage Action
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-        with:
-          coverageCommand: npm run coverage
