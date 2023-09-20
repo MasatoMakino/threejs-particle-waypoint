@@ -5,7 +5,7 @@ export default defineConfig({
     name: "jsdomTest",
     environment: "jsdom",
     coverage: {
-      provider: "v8",
+      provider: "istanbul",
     },
   },
 });
