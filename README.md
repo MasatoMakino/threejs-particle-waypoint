@@ -5,6 +5,7 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![build test](https://github.com/MasatoMakino/threejs-particle-waypoint/actions/workflows/ci_main.yml/badge.svg)](https://github.com/MasatoMakino/threejs-particle-waypoint/actions/workflows/ci_main.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b14e7ead3dfae70d1e3f/maintainability)](https://codeclimate.com/github/MasatoMakino/threejs-particle-waypoint/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b14e7ead3dfae70d1e3f/test_coverage)](https://codeclimate.com/github/MasatoMakino/threejs-particle-waypoint/test_coverage)
 
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=MasatoMakino&repo=threejs-particle-waypoint&show_owner=true)](https://github.com/MasatoMakino/threejs-particle-waypoint)
 
