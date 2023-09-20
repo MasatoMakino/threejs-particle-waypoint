@@ -51,7 +51,7 @@
   },
   "scripts": {
     "test": "vitest",
-    "coverage": "vitest run --coverage",
+    "coverage": "vitest --run --coverage",
     "prepare": "husky install",
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
     "build": "npm run buildTS && npm run demo",
