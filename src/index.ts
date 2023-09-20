@@ -1,3 +1,3 @@
-export * from "./ParticleWayBuilder";
-export * from "./ThreeParticle";
-export * from "./ThreeParticleGenerator";
+export * from "./ParticleWayBuilder.js";
+export * from "./ThreeParticle.js";
+export * from "./ThreeParticleGenerator.js";
