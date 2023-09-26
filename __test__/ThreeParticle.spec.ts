@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ThreeParticle } from "../src/index.js";
+import { TestImage } from "./TestImage.js";
 import { ParticleWay } from "@masatomakino/particle-waypoint";
 import { Object3D } from "three";
 
@@ -22,8 +23,7 @@ describe("ThreeParticle", () => {
   it.fails("update after dispose", () => {
     const { particle } = generateTestParticle();
     const parent = new Object3D();
-    const imagePath = "../demoSrc/map01.png";
-    particle.init(parent, imagePath, 1);
+    particle.init(parent, TestImage, 1);
     particle.dispose();
     particle.update(0.5);
   });
@@ -31,8 +31,7 @@ describe("ThreeParticle", () => {
   it("should be child of Object3D with init", async () => {
     const { particle } = generateTestParticle();
     const parent = new Object3D();
-    const imagePath = "../demoSrc/map01.png";
-    particle.init(parent, imagePath, 3);
+    particle.init(parent, TestImage, 3);
     expect(parent.children.length).toBe(1);
   });
 });
