@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { ThreeParticleGenerator } from "../src/index.js";
 import { Object3D } from "three";
 import { ParticleWay } from "@masatomakino/particle-waypoint";
+import { TestImage } from "./TestImage.js";
 
 const getGenerator = () => {
   const parent = new Object3D();
@@ -12,9 +13,9 @@ const getGenerator = () => {
   const generator = new ThreeParticleGenerator(
     parent,
     particleWay,
-    "../demoSrc/map01.png",
+    TestImage,
     1,
-    {}
+    {},
   );
   return { generator, parent };
 };
