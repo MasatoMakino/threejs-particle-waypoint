@@ -35,7 +35,6 @@
     "jsdom": "^23.0.1",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
-    "three": "^0.158.0",
     "typedoc": "^0.25.1",
     "typescript": "^5.2.2",
     "vitest": "^1.0.4"
