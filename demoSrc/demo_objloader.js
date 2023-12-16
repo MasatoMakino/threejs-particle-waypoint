@@ -5,6 +5,9 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 
 /**
  * OBJLoaderを使ってパスを読み込むサンプル
+ *
+ * OBJファイルでは、閉じていない線分も読み込める。
+ * 3Dモデルの形式によっては、閉じていない線分は保存の時点で削除されている場合がある。
  */
 
 const W = 800;
@@ -20,9 +23,12 @@ const initWaypoint = async (scene) => {
   const loader = new OBJLoader();
   const obj = await loader.loadAsync("./path.obj");
 
+  //OBJLoaderで読み込んだパスは、LineSegmentsオブジェクトとして取得される
   const line = obj.children[0];
+  //LineSegmentsオブジェクトの各頂点は、"position"という名前のBufferAttributeとして取得できる
   const positions = line.geometry.getAttribute("position");
 
+  //BufferAttributeから各頂点の座標を取得する
   const points = Array.from({ length: positions.count }, (_, i) => {
     const x = positions.getX(i);
     const y = positions.getY(i);
@@ -31,7 +37,6 @@ const initWaypoint = async (scene) => {
   });
 
   const path = new ParticleWay(points);
-
   const generator = new ThreeParticleGenerator(
     scene,
     path,
