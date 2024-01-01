@@ -27,7 +27,7 @@
   "license": "MIT",
   "devDependencies": {
     "@masatomakino/gulptask-demo-page": "^0.8.0",
-    "@types/three": "^0.159.0",
+    "@types/three": "^0.160.0",
     "@vitest/coverage-istanbul": "^1.0.4",
     "browser-sync": "^2.29.3",
     "canvas": "^2.11.2",
