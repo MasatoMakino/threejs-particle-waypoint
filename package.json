@@ -26,7 +26,7 @@
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@masatomakino/gulptask-demo-page": "^0.7.1",
+    "@masatomakino/gulptask-demo-page": "^0.8.0",
     "@types/three": "^0.159.0",
     "@vitest/coverage-istanbul": "^1.0.4",
     "browser-sync": "^2.29.3",
