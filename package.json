@@ -29,7 +29,7 @@
     "@masatomakino/gulptask-demo-page": "^0.8.0",
     "@types/three": "^0.160.0",
     "@vitest/coverage-istanbul": "^1.0.4",
-    "browser-sync": "^2.29.3",
+    "browser-sync": "^3.0.2",
     "canvas": "^2.11.2",
     "husky": "^8.0.3",
     "jsdom": "^23.0.1",
@@ -39,11 +39,9 @@
     "typescript": "^5.3.3",
     "vitest": "^1.0.4"
   },
-  "dependencies": {
-    "@masatomakino/particle-waypoint": "^0.7.0"
-  },
   "peerDependencies": {
-    "three": ">=0.126.0 <1.0.0"
+    "three": ">=0.126.0 <1.0.0",
+    "@masatomakino/particle-waypoint": "^0.8.0"
   },
   "overrides": {
     "eventemitter3": "^5.0.0"
