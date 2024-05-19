@@ -4,6 +4,7 @@ import {
   PerspectiveCamera,
   Scene,
   WebGLRenderer,
+  REVISION,
 } from "three";
 
 export const initScene = (W, H) => {
@@ -21,6 +22,8 @@ export const initScene = (W, H) => {
   renderer.setClearColor(new Color(0x000000));
   renderer.setSize(W, H);
   renderer.setPixelRatio(window.devicePixelRatio);
+
+  console.log(`Three.js revision ${REVISION}`);
 
   //平行光源オブジェクト(light)の設定
   const ambientLight = new AmbientLight(0xffffff, 1.0);
