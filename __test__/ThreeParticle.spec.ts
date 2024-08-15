@@ -20,12 +20,12 @@ describe("ThreeParticle", () => {
     expect(particle).toBeTruthy();
   });
 
-  it.fails("update after dispose", () => {
+  it("update after dispose", () => {
     const { particle } = generateTestParticle();
     const parent = new Object3D();
     particle.init(parent, TestImage, 1);
     particle.dispose();
-    particle.update(0.5);
+    expect(() => particle.update(0.5)).toThrow(TypeError);
   });
 
   it("should be child of Object3D with init", async () => {
