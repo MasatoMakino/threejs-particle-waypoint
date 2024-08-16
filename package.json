@@ -37,7 +37,7 @@
     "three": "^0.167.1",
     "typedoc": "^0.26.3",
     "typescript": "^5.4.3",
-    "webdriverio": "^8.40.2"
+    "webdriverio": "^9.0.1"
   },
   "peerDependencies": {
     "@masatomakino/particle-waypoint": "^0.8.0",
