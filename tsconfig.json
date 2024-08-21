@@ -3,7 +3,7 @@
     /* Basic Options */
     "target": "ES2021",
     "module": "node16",
-    "lib": ["ES2021"],
+    "lib": ["ES2021", "DOM"],
     "declaration": true /* Generates corresponding '.d.ts' file. */,
     "declarationMap": true /* Generates a sourcemap for each corresponding '.d.ts' file. */,
     "outDir": "./esm" /* Redirect output structure to the directory. */,
@@ -11,7 +11,6 @@
     /* Module Resolution Options */
     "moduleResolution": "node16",
     "esModuleInterop": true,
-    "skipLibCheck": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
