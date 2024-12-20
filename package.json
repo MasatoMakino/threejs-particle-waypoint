@@ -1,6 +1,6 @@
 {
   "name": "@masatomakino/threejs-particle-waypoint",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Particle waypoint module for three.js",
   "type": "module",
   "exports": {
