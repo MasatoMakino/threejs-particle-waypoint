@@ -48,7 +48,7 @@
     "eventemitter3": "^5.0.0"
   },
   "scripts": {
-    "test": "vitest",
+    "test": "vitest --run",
     "coverage": "vitest --run --coverage",
     "prepare": "husky",
     "preversion": "npx @masatomakino/release-helper preversion",
