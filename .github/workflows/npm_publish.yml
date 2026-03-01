@@ -1,23 +1,26 @@
 name: Publish to NPM
 on:
   release:
-    types: [created]
+    types: [published]
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for OIDC authentication
+      contents: read   # Required for repository access
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
           node-version: "20"
           cache: "npm"
           registry-url: "https://registry.npmjs.org"
+      - name: Upgrade npm to v11.6.0
+        run: npm install -g npm@11.6.0
       - run: npm ci
       - name: build binary
         run: npm run buildTS
       - name: Publish package on NPM 📦
         run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
