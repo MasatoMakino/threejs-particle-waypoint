@@ -21,18 +21,18 @@ export class ThreeParticle extends Particle {
     return new Promise((resolve, reject) => {
       const map = ThreeParticle.loader.load(
         texturePath,
-        (texture: Texture) => {
+        (texture: Texture<HTMLImageElement>) => {
           this.sprite?.scale.set(
             texture.image.width * scale,
             texture.image.height * scale,
-            1.0
+            1.0,
           );
           return resolve(this.sprite);
         },
         undefined,
         (err) => {
           return reject(err);
-        }
+        },
       );
       const mat = new SpriteMaterial({
         map: map,
