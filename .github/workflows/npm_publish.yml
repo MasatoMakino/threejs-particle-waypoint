@@ -83,6 +83,13 @@ jobs:
         with:
           ref: ${{ needs.validate.outputs.commit_sha }}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: "22"
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
       - name: Verify package.json version matches tag
         env:
           TAG_VERSION: ${{ needs.validate.outputs.version }}
@@ -93,13 +100,6 @@ jobs:
             exit 1
           fi
           echo "Version match: $PKG_VERSION"
-
-      - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
-        with:
-          node-version: "22"
-          cache: "npm"
-          registry-url: "https://registry.npmjs.org"
 
       - name: Upgrade npm for OIDC trusted publishing
         run: npm install -g "npm@^11.10.0"
