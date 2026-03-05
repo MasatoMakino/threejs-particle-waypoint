@@ -16,12 +16,20 @@ jobs:
       contents: read
     env:
       GH_TOKEN: ${{ github.token }}
+      REF: ${{ github.ref }}
       TAG: ${{ github.ref_name }}
       REPO: ${{ github.repository }}
     outputs:
       version: ${{ steps.extract.outputs.version }}
       commit_sha: ${{ steps.resolve_tag.outputs.sha }}
     steps:
+      - name: Verify dispatch ref is a tag
+        run: |
+          if [[ "$REF" != refs/tags/* ]]; then
+            echo "::error::Workflow must be dispatched from a tag ref, got: $REF"
+            exit 1
+          fi
+
       - name: Validate tag format
         run: |
           if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
