@@ -42,8 +42,8 @@ jobs:
         id: resolve_tag
         run: |
           TAG_REF=$(gh api "repos/${REPO}/git/ref/tags/${TAG}" \
-            --jq '.object.sha + " " + .object.type' 2>/dev/null) || {
-            echo "::error::Tag $TAG does not exist in repository"
+            --jq '.object.sha + " " + .object.type') || {
+            echo "::error::Failed to look up tag $TAG"
             exit 1
           }
           TAG_OBJ_SHA=$(echo "$TAG_REF" | cut -d' ' -f1)
@@ -52,7 +52,7 @@ jobs:
             COMMIT_SHA="$TAG_OBJ_SHA"
           else
             COMMIT_SHA=$(gh api "repos/${REPO}/git/tags/${TAG_OBJ_SHA}" \
-              --jq '.object.sha' 2>/dev/null) || {
+              --jq '.object.sha') || {
               echo "::error::Failed to resolve annotated tag $TAG"
               exit 1
             }
