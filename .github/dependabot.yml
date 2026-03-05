@@ -17,7 +17,7 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      - dependency-name: "@vitest/browser"
+      - dependency-name: "@vitest/browser-webdriverio"
     cooldown:
       default-days: 5
       semver-major-days: 30
