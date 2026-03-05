@@ -10,13 +10,15 @@ on:
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   validate:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
     outputs:
       version: ${{ steps.extract.outputs.version }}
+      commit_sha: ${{ steps.resolve_tag.outputs.sha }}
     steps:
       - name: Validate tag format
         env:
@@ -27,18 +29,19 @@ jobs:
             exit 1
           fi
 
-      - name: Verify tag exists
+      - name: Verify tag exists and resolve commit SHA
+        id: resolve_tag
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag }}
           REPO: ${{ github.repository }}
         run: |
-          gh api "repos/${REPO}/git/ref/tags/${TAG}" \
-            --jq '.ref' > /dev/null 2>&1 || {
+          TAG_SHA=$(gh api "repos/${REPO}/commits/${TAG}" --jq '.sha' 2>/dev/null) || {
             echo "::error::Tag $TAG does not exist in repository"
             exit 1
           }
-          echo "Tag $TAG exists"
+          echo "Tag $TAG exists at commit $TAG_SHA"
+          echo "sha=$TAG_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Verify GitHub Release is published
         env:
@@ -78,7 +81,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ inputs.tag }}
+          ref: ${{ needs.validate.outputs.commit_sha }}
 
       - name: Verify package.json version matches tag
         env:
