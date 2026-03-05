@@ -49,6 +49,8 @@
     "test:ci": "xvfb-run --auto-servernum vitest --run",
     "coverage": "vitest --run --coverage",
     "coverage:ci": "xvfb-run --auto-servernum vitest --coverage --run",
+    "pre-commit": "prettier --write --ignore-unknown",
+    "pre-push": "vitest --run",
     "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
     "build": "npm run buildTS && npm run demo",
     "demo": "npx @masatomakino/gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"1280\" height=\"768\"></canvas>' --copyTargets 'png' 'obj' ",
