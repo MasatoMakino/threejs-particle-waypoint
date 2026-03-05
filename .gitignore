@@ -64,3 +64,6 @@ typings/
 docs/
 lib/
 esm/
+
+# 1Password CLI
+.op/
