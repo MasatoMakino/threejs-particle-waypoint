@@ -32,12 +32,24 @@ jobs:
       - name: Verify tag exists and resolve commit SHA
         id: resolve_tag
         run: |
-          TAG_SHA=$(gh api "repos/${REPO}/commits/${TAG}" --jq '.sha' 2>/dev/null) || {
+          TAG_REF=$(gh api "repos/${REPO}/git/ref/tags/${TAG}" \
+            --jq '.object.sha + " " + .object.type' 2>/dev/null) || {
             echo "::error::Tag $TAG does not exist in repository"
             exit 1
           }
-          echo "Tag $TAG exists at commit $TAG_SHA"
-          echo "sha=$TAG_SHA" >> "$GITHUB_OUTPUT"
+          TAG_OBJ_SHA=$(echo "$TAG_REF" | cut -d' ' -f1)
+          TAG_OBJ_TYPE=$(echo "$TAG_REF" | cut -d' ' -f2)
+          if [ "$TAG_OBJ_TYPE" = "commit" ]; then
+            COMMIT_SHA="$TAG_OBJ_SHA"
+          else
+            COMMIT_SHA=$(gh api "repos/${REPO}/git/tags/${TAG_OBJ_SHA}" \
+              --jq '.object.sha' 2>/dev/null) || {
+              echo "::error::Failed to resolve annotated tag $TAG"
+              exit 1
+            }
+          fi
+          echo "Tag $TAG exists at commit $COMMIT_SHA"
+          echo "sha=$COMMIT_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Verify GitHub Release is published
         run: |
