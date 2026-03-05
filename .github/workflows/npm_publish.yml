@@ -16,13 +16,15 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ inputs.tag }}
+      REPO: ${{ github.repository }}
     outputs:
       version: ${{ steps.extract.outputs.version }}
       commit_sha: ${{ steps.resolve_tag.outputs.sha }}
     steps:
       - name: Validate tag format
-        env:
-          TAG: ${{ inputs.tag }}
         run: |
           if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "::error::Invalid tag format: $TAG (expected v*.*.* pattern)"
@@ -31,10 +33,6 @@ jobs:
 
       - name: Verify tag exists and resolve commit SHA
         id: resolve_tag
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ inputs.tag }}
-          REPO: ${{ github.repository }}
         run: |
           TAG_SHA=$(gh api "repos/${REPO}/commits/${TAG}" --jq '.sha' 2>/dev/null) || {
             echo "::error::Tag $TAG does not exist in repository"
@@ -44,10 +42,6 @@ jobs:
           echo "sha=$TAG_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Verify GitHub Release is published
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ inputs.tag }}
-          REPO: ${{ github.repository }}
         run: |
           RELEASE_INFO=$(gh api "repos/${REPO}/releases/tags/${TAG}" \
             --jq '{draft: .draft, name: .name}' 2>&1) || {
@@ -64,8 +58,6 @@ jobs:
 
       - name: Extract version from tag
         id: extract
-        env:
-          TAG: ${{ inputs.tag }}
         run: |
           VERSION="$TAG"
           VERSION="${VERSION#v}"
