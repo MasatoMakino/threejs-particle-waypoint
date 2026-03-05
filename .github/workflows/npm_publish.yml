@@ -19,6 +19,7 @@ jobs:
       REF: ${{ github.ref }}
       TAG: ${{ github.ref_name }}
       REPO: ${{ github.repository }}
+      DISPATCH_SHA: ${{ github.sha }}
     outputs:
       version: ${{ steps.extract.outputs.version }}
       commit_sha: ${{ steps.resolve_tag.outputs.sha }}
@@ -56,7 +57,11 @@ jobs:
               exit 1
             }
           fi
-          echo "Tag $TAG exists at commit $COMMIT_SHA"
+          if [ "$COMMIT_SHA" != "$DISPATCH_SHA" ]; then
+            echo "::error::Tag commit ($COMMIT_SHA) differs from dispatch commit ($DISPATCH_SHA). Tag may have been force-moved."
+            exit 1
+          fi
+          echo "Tag $TAG verified at commit $COMMIT_SHA"
           echo "sha=$COMMIT_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Verify GitHub Release is published
