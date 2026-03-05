@@ -6,11 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-# Allow only one concurrent deployment
-concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
   build-pages:
     runs-on: ubuntu-latest
@@ -42,6 +37,10 @@ jobs:
           path: ./docs
 
   deploy-pages:
+    # Allow only one concurrent deployment
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write
