@@ -67,3 +67,6 @@ esm/
 
 # 1Password CLI
 .op/
+
+# Claude Code
+.claude/settings.local.json
