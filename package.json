@@ -37,7 +37,7 @@
     "typedoc": "^0.28.0",
     "typescript": "^5.4.3",
     "vitest": "4.0.18",
-    "webdriverio": "^9.32.0"
+    "webdriverio": "^10.1.0"
   },
   "peerDependencies": {
     "@masatomakino/particle-waypoint": "^0.8.0",
