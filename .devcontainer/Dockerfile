@@ -9,6 +9,7 @@ RUN set -eux; \
         curl \
         gnupg \
         sudo \
+        unzip \
         iptables ipset iproute2 dnsutils aggregate jq \
     ; \
     curl -fsSL https://dl.google.com/linux/linux_signing_key.pub \

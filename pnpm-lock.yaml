@@ -164,7 +164,6 @@ settings:
 
 overrides:
   eventemitter3: ^5.0.0
-  yauzl: 3.4.0
 
 importers:
 
@@ -182,7 +181,7 @@ importers:
         version: 0.183.1
       '@vitest/browser-webdriverio':
         specifier: ^4.0.0
-        version: 4.0.18(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1))(vitest@4.0.18)(webdriverio@10.1.0(supports-color@8.1.1)(yauzl@3.4.0))
+        version: 4.0.18(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1))(vitest@4.0.18)(webdriverio@10.1.0(supports-color@8.1.1))
       '@vitest/coverage-istanbul':
         specifier: ^4.0.18
         version: 4.0.18(supports-color@8.1.1)(vitest@4.0.18)
@@ -206,7 +205,7 @@ importers:
         version: 4.0.18(@types/node@25.3.3)(@vitest/browser-webdriverio@4.0.18)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1)
       webdriverio:
         specifier: ^10.1.0
-        version: 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+        version: 10.1.0(supports-color@8.1.1)
 
 packages:
 
@@ -488,7 +487,7 @@ packages:
     hasBin: true
     peerDependencies:
       proxy-agent: '>=8.0.1'
-      yauzl: 3.4.0
+      yauzl: ^2.10.0 || ^3.4.0
     peerDependenciesMeta:
       proxy-agent:
         optional: true
@@ -1786,9 +1785,6 @@ packages:
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
 
-  pend@1.2.0:
-    resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
-
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -2411,10 +2407,6 @@ packages:
     resolution: {integrity: sha512-9OpKOLeaoNFecEp7P6iYbzze/5CqWoH7N3SMs/6y1XF4nMvFMspEGZzJ6uFi9MmQwXhyzqYoSEKO3tvA3Z/o2w==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
-  yauzl@3.4.0:
-    resolution: {integrity: sha512-jIH9yLR9wqr0wOS0TpBvo/g/2UgZH5qePVbjgRliiF0BYvOZyaBknKsF+x9Iht0O6sqgnB93rCICdOZFecJuDw==}
-    engines: {node: '>=12'}
-
   zip-stream@7.0.5:
     resolution: {integrity: sha512-dSvYKdvLsAHCDqPOhIwk/q5CvuWtTB3Dgpoe0uVEFjTzIOAmsQpprX25InCvrvJsirEbu1OHyy67n/kAj1Sw/w==}
     engines: {node: '>=18'}
@@ -2665,12 +2657,10 @@ snapshots:
     dependencies:
       spacetrim: 0.11.59
 
-  '@puppeteer/browsers@3.2.6(yauzl@3.4.0)':
+  '@puppeteer/browsers@3.2.6':
     dependencies:
       modern-tar: 0.8.6
       yargs: 18.2.0
-    optionalDependencies:
-      yauzl: 3.4.0
 
   '@rollup/rollup-android-arm-eabi@4.59.0':
     optional: true
@@ -2836,11 +2826,11 @@ snapshots:
     dependencies:
       '@types/node': 22.20.5
 
-  '@vitest/browser-webdriverio@4.0.18(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1))(vitest@4.0.18)(webdriverio@10.1.0(supports-color@8.1.1)(yauzl@3.4.0))':
+  '@vitest/browser-webdriverio@4.0.18(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1))(vitest@4.0.18)(webdriverio@10.1.0(supports-color@8.1.1))':
     dependencies:
       '@vitest/browser': 4.0.18(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1))(vitest@4.0.18)
       vitest: 4.0.18(@types/node@25.3.3)(@vitest/browser-webdriverio@4.0.18)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1)
-      webdriverio: 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+      webdriverio: 10.1.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -2919,11 +2909,11 @@ snapshots:
       '@vitest/pretty-format': 4.0.18
       tinyrainbow: 3.0.3
 
-  '@wdio/config@10.1.0(supports-color@8.1.1)(yauzl@3.4.0)':
+  '@wdio/config@10.1.0(supports-color@8.1.1)':
     dependencies:
       '@wdio/logger': 10.1.0
       '@wdio/types': 10.1.0
-      '@wdio/utils': 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+      '@wdio/utils': 10.1.0(supports-color@8.1.1)
       deepmerge-ts: 8.0.2
       glob: 13.0.6
       import-meta-resolve: 4.2.0
@@ -2951,9 +2941,9 @@ snapshots:
     dependencies:
       '@types/node': 22.20.5
 
-  '@wdio/utils@10.1.0(supports-color@8.1.1)(yauzl@3.4.0)':
+  '@wdio/utils@10.1.0(supports-color@8.1.1)':
     dependencies:
-      '@puppeteer/browsers': 3.2.6(yauzl@3.4.0)
+      '@puppeteer/browsers': 3.2.6
       '@types/split2': 4.2.3
       '@wdio/logger': 10.1.0
       '@wdio/types': 10.1.0
@@ -4013,9 +4003,6 @@ snapshots:
 
   pathe@2.0.3: {}
 
-  pend@1.2.0:
-    optional: true
-
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
@@ -4506,7 +4493,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 25.3.3
-      '@vitest/browser-webdriverio': 4.0.18(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1))(vitest@4.0.18)(webdriverio@10.1.0(supports-color@8.1.1)(yauzl@3.4.0))
+      '@vitest/browser-webdriverio': 4.0.18(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.9.1))(vitest@4.0.18)(webdriverio@10.1.0(supports-color@8.1.1))
     transitivePeerDependencies:
       - jiti
       - less
@@ -4533,15 +4520,15 @@ snapshots:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
 
-  webdriver@10.1.0(supports-color@8.1.1)(yauzl@3.4.0):
+  webdriver@10.1.0(supports-color@8.1.1):
     dependencies:
       '@types/node': 22.20.5
       '@types/ws': 8.18.1
-      '@wdio/config': 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+      '@wdio/config': 10.1.0(supports-color@8.1.1)
       '@wdio/logger': 10.1.0
       '@wdio/protocols': 10.0.2
       '@wdio/types': 10.1.0
-      '@wdio/utils': 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+      '@wdio/utils': 10.1.0(supports-color@8.1.1)
       deepmerge-ts: 8.0.2
       https-proxy-agent: 9.1.0(supports-color@8.1.1)
       undici: 8.12.3
@@ -4554,16 +4541,16 @@ snapshots:
       - utf-8-validate
       - yauzl
 
-  webdriverio@10.1.0(supports-color@8.1.1)(yauzl@3.4.0):
+  webdriverio@10.1.0(supports-color@8.1.1):
     dependencies:
       '@types/node': 22.20.5
       '@types/sinonjs__fake-timers': 15.0.1
-      '@wdio/config': 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+      '@wdio/config': 10.1.0(supports-color@8.1.1)
       '@wdio/logger': 10.1.0
       '@wdio/protocols': 10.0.2
       '@wdio/repl': 10.0.0
       '@wdio/types': 10.1.0
-      '@wdio/utils': 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+      '@wdio/utils': 10.1.0(supports-color@8.1.1)
       archiver: 8.0.0
       aria-query: 5.3.0
       cheerio: 1.2.0
@@ -4578,7 +4565,7 @@ snapshots:
       rgb2hex: 0.2.5
       serialize-error: 13.0.2
       urlpattern-polyfill: 10.1.0
-      webdriver: 10.1.0(supports-color@8.1.1)(yauzl@3.4.0)
+      webdriver: 10.1.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
@@ -4683,11 +4670,6 @@ snapshots:
       string-width: 8.3.0
       y18n: 5.0.8
       yargs-parser: 22.0.0
-
-  yauzl@3.4.0:
-    dependencies:
-      pend: 1.2.0
-    optional: true
 
   zip-stream@7.0.5:
     dependencies:
