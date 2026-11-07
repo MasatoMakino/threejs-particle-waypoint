@@ -34,7 +34,6 @@
     "browser-sync": "^3.0.4",
     "prettier": "^3.9.10",
     "three": "^0.187.0",
-    "typedoc": "^0.28.20",
     "typescript": "^5.9.3",
     "vitest": "5.0.5",
     "webdriverio": "^10.1.0"
@@ -54,7 +53,6 @@
     "build": "pnpm run buildTS && pnpm run demo",
     "demo": "gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"1280\" height=\"768\"></canvas>' --copyTargets 'png' 'obj' ",
     "buildTS": "tsc",
-    "typedocs": "typedoc --out ./docs/api src/index.ts",
     "server": "browser-sync './docs/demo' -w --port 3000 --no-open",
     "watch:demo": "pnpm run demo -W",
     "watch:tsc": "tsc -W --incremental"

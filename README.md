@@ -9,10 +9,6 @@
 
 [Demo Page](https://masatomakino.github.io/threejs-particle-waypoint/demo/)
 
-## API documents
-
-[API documents](https://masatomakino.github.io/threejs-particle-waypoint/api/index.html)
-
 ## License
 
 [MIT licensed](LICENSE).
