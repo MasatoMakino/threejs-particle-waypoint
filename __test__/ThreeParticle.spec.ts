@@ -15,12 +15,7 @@ const generateTestParticle = () => {
   };
 };
 describe("ThreeParticle", () => {
-  it("should be constructable", () => {
-    const { particle } = generateTestParticle();
-    expect(particle).toBeTruthy();
-  });
-
-  it("update after dispose", () => {
+  it("update() throws a TypeError after dispose(), because dispose() releases the sprite", () => {
     const { particle } = generateTestParticle();
     const parent = new Object3D();
     particle.init(parent, TestImage, 1);
@@ -28,7 +23,7 @@ describe("ThreeParticle", () => {
     expect(() => particle.update(0.5)).toThrow(TypeError);
   });
 
-  it("should be child of Object3D with init", async () => {
+  it("init() adds the sprite to the parent without waiting for the texture", () => {
     const { particle } = generateTestParticle();
     const parent = new Object3D();
     particle.init(parent, TestImage, 3);

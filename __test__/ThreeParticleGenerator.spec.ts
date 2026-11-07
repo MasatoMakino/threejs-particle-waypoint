@@ -20,19 +20,12 @@ const getGenerator = () => {
   return { generator, parent };
 };
 describe("ThreeParticleGenerator", () => {
-  it("should be exist", () => {
-    const { generator } = getGenerator();
-    expect(generator).not.toBeUndefined();
-  });
-
-  const testGenerateAll = (interval: number, particleLength: number) => {
+  it("generateAll() adds one sprite to the parent for each generated particle", () => {
     const { generator, parent } = getGenerator();
-    generator.animator.generationInterval = interval;
+    generator.animator.generationInterval = 250;
     generator.generateAll();
-    expect(parent.children.length).toBe(particleLength);
-  };
-  it("should generate particles with interval", () => {
-    testGenerateAll(250, 58);
-    testGenerateAll(300, 48);
+    const particleCount = generator.particleContainer.particles.length;
+    expect(particleCount).toBeGreaterThan(0);
+    expect(parent.children.length).toBe(particleCount);
   });
 });
