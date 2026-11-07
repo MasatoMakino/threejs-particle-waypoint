@@ -1,13 +1,16 @@
 minimumReleaseAge: 10080
 trustPolicy: no-downgrade
 trustPolicyExclude:
-  - "@wdio/logger@9.18.0"
   - "@wdio/repl@9.16.2"
   - "semver@6.3.1"
   - "ua-parser-js@1.0.41"
   - "undici-types@6.21.0"
 overrides:
   eventemitter3: ^5.0.0
+  # extract-zip@2 requires yauzl@2, which never finishes extracting the
+  # chromedriver archive on Node.js 26.
+  # Removal condition: webdriverio no longer depends on extract-zip.
+  yauzl: 3.4.0
 allowBuilds:
   edgedriver: false
   esbuild: false
