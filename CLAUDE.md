@@ -54,6 +54,6 @@ Both use seccomp profile (`seccomp-chrome.json`) for Chrome sandboxing instead o
 
 ## CI/CD
 
-- **CI** (`ci_main.yml`): Node matrix [20.x, 22.x, 24.x]
+- **CI** (`ci_main.yml`): Node matrix [24.x, 26.x]
 - **GitHub Pages** (`gh-pages.yml`): Build demo + typedoc, deploy via official `actions/deploy-pages`
 - **npm publish** (`npm_publish.yml`): `workflow_dispatch` from a tag, OIDC trusted publishing with `npm-publish` environment gate
