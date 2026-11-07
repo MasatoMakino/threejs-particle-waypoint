@@ -11,23 +11,23 @@ ESM TypeScript library that provides Three.js particle animation along waypoint 
 
 ## Commands
 
-All npm/npx commands must run inside the DevContainer.
+All pnpm commands must run inside the DevContainer.
 
 ```bash
 # Build (TypeScript compilation to esm/)
-devcontainer exec --workspace-folder . npm run buildTS
+devcontainer exec --workspace-folder . pnpm run buildTS
 
 # Run all tests (Vitest browser mode with Chrome)
-devcontainer exec --workspace-folder . npm test
+devcontainer exec --workspace-folder . pnpm test
 
 # Run a single test file
-devcontainer exec --workspace-folder . npx vitest run __test__/ThreeParticle.spec.ts
+devcontainer exec --workspace-folder . pnpm exec vitest run __test__/ThreeParticle.spec.ts
 
 # Run tests with coverage
-devcontainer exec --workspace-folder . npm run coverage
+devcontainer exec --workspace-folder . pnpm run coverage
 
 # Full build (TypeScript + demo page)
-devcontainer exec --workspace-folder . npm run build
+devcontainer exec --workspace-folder . pnpm run build
 ```
 
 ## Architecture
@@ -47,7 +47,7 @@ Tests run in **Vitest browser mode** with WebDriverIO + headless Chrome (SwiftSh
 
 Two configurations in `.devcontainer/`:
 
-- **Default** (`devcontainer.json`) - Interactive development with npm isolation and network firewall
+- **Default** (`devcontainer.json`) - Interactive development with pnpm isolation and network firewall
 - **Claude** (`claude/devcontainer.json`) - Automated agent use
 
 Both use seccomp profile (`seccomp-chrome.json`) for Chrome sandboxing instead of `--cap-add=SYS_ADMIN`.

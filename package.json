@@ -25,6 +25,7 @@
   },
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
+  "packageManager": "pnpm@12.16.1",
   "devDependencies": {
     "@masatomakino/gulptask-demo-page": "^0.10.0",
     "@types/three": "^0.183.1",
@@ -35,14 +36,12 @@
     "three": "^0.183.1",
     "typedoc": "^0.28.0",
     "typescript": "^5.4.3",
+    "vitest": "4.0.18",
     "webdriverio": "^9.0.1"
   },
   "peerDependencies": {
     "@masatomakino/particle-waypoint": "^0.8.0",
     "three": ">=0.126.0 <1.0.0"
-  },
-  "overrides": {
-    "eventemitter3": "^5.0.0"
   },
   "scripts": {
     "test": "vitest --run",
@@ -51,13 +50,13 @@
     "coverage:ci": "xvfb-run --auto-servernum vitest --coverage --run",
     "pre-commit": "prettier --write --ignore-unknown",
     "pre-push": "vitest --run",
-    "start:dev": "npm run server & npm run watch:tsc & npm run watch:demo",
-    "build": "npm run buildTS && npm run demo",
-    "demo": "npx @masatomakino/gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"1280\" height=\"768\"></canvas>' --copyTargets 'png' 'obj' ",
+    "start:dev": "pnpm run server & pnpm run watch:tsc & pnpm run watch:demo",
+    "build": "pnpm run buildTS && pnpm run demo",
+    "demo": "gulptask-demo-page --body '<canvas id=\"webgl-canvas\" width=\"1280\" height=\"768\"></canvas>' --copyTargets 'png' 'obj' ",
     "buildTS": "tsc",
-    "typedocs": "npx typedoc --out ./docs/api src/index.ts",
+    "typedocs": "typedoc --out ./docs/api src/index.ts",
     "server": "browser-sync './docs/demo' -w --port 3000 --no-open",
-    "watch:demo": "npm run demo -- -W",
+    "watch:demo": "pnpm run demo -W",
     "watch:tsc": "tsc -W --incremental"
   },
   "bugs": {

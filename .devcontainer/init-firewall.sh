@@ -1,5 +1,5 @@
 #!/bin/bash
-# npm runner firewall configuration
+# pnpm runner firewall configuration
 FIREWALL_ALLOW_SSH=false
 
 # Shared: npm registry + ChromeDriver CDN (used by both containers)

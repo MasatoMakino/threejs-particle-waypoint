@@ -29,4 +29,6 @@ RUN chmod +x /usr/local/bin/firewall-base.sh /usr/local/bin/init-firewall.sh && 
     echo "node ALL=(root) NOPASSWD: /usr/local/bin/init-firewall.sh" > /etc/sudoers.d/node-firewall && \
     chmod 0440 /etc/sudoers.d/node-firewall
 
-RUN node --version && npm --version && google-chrome --version
+RUN npm install -g pnpm@12.16.1
+
+RUN node --version && pnpm --version && google-chrome --version
