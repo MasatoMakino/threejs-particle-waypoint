@@ -1,6 +1,10 @@
 import { ParticleWay } from "@masatomakino/particle-waypoint";
 import { ThreeParticleGenerator } from "../esm/index.js";
 import { initScene, startRendering } from "./common.js";
+import map01 from "./map01.png";
+import map02 from "./map02.png";
+import map03 from "./map03.png";
+import map04 from "./map04.png";
 const W = 800;
 const H = 600;
 
@@ -23,7 +27,7 @@ const initWaypoint = (scene) => {
   const generator = new ThreeParticleGenerator(
     scene,
     path,
-    ["./map01.png", "./map02.png", "./map03.png", "./map04.png"],
+    [map01, map02, map03, map04],
     0.005,
     {
       generationMode: "loop",
