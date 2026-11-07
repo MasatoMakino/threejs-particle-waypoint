@@ -1,6 +1,11 @@
 import { ParticleWay } from "@masatomakino/particle-waypoint";
 import { ThreeParticleGenerator } from "../esm/index.js";
 import { initScene, startRendering } from "./common.js";
+import map01 from "./map01.png";
+import map02 from "./map02.png";
+import map03 from "./map03.png";
+import map04 from "./map04.png";
+import pathObj from "./path.obj?url";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 
 /**
@@ -21,7 +26,7 @@ const onDomContentsLoaded = async () => {
 
 const initWaypoint = async (scene) => {
   const loader = new OBJLoader();
-  const obj = await loader.loadAsync("./path.obj");
+  const obj = await loader.loadAsync(pathObj);
 
   //OBJLoaderで読み込んだパスは、LineSegmentsオブジェクトとして取得される
   const line = obj.children[0];
@@ -40,7 +45,7 @@ const initWaypoint = async (scene) => {
   const generator = new ThreeParticleGenerator(
     scene,
     path,
-    ["./map01.png", "./map02.png", "./map03.png", "./map04.png"],
+    [map01, map02, map03, map04],
     0.005,
     {
       generationMode: "loop",
