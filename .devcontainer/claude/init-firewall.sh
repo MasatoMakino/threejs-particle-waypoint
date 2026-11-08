@@ -1,6 +1,8 @@
 #!/bin/bash
 # Claude Code sandbox firewall configuration
 FIREWALL_ALLOW_SSH=false
+# gh and git remotes in the Claude Code sandbox
+FIREWALL_ALLOW_GITHUB=true
 
 # Shared: npm registry + ChromeDriver CDN (same as npm runner)
 BASE_DOMAINS="registry.npmjs.org storage.googleapis.com edgedl.me.gvt1.com"
