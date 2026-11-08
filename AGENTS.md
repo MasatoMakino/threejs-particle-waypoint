@@ -1,30 +1,36 @@
 # AGENTS.md
 
-This file provides guidance to AI coding agents when working with code in this repository.
-
-## Project Overview
-
-ESM TypeScript library that provides Three.js particle animation along waypoint paths. Wraps `@masatomakino/particle-waypoint` (core engine) with Three.js `Sprite`-based rendering.
-
-- **Package**: `@masatomakino/threejs-particle-waypoint`
+For the project overview and the usage, see [README.md](README.md).
 
 ## Commands
 
-All pnpm commands must run inside the DevContainer. Each worktree has its own DevContainer. In a new worktree, run `devcontainer up --workspace-folder .` once before the other commands.
+Run every pnpm command inside the DevContainer. For the container configuration, see [.devcontainer/README.md](.devcontainer/README.md). To work in a git worktree, see [Worktrees](.devcontainer/DESIGN.md#worktrees).
 
 ```bash
-# Build (TypeScript compilation to esm/)
+# Start the container (once per working tree)
+devcontainer up --workspace-folder .
+
+# Build the TypeScript sources into esm/
 devcontainer exec --workspace-folder . pnpm run buildTS
 
-# Run all tests (Vitest browser mode with Chrome)
+# Run the tests (Vitest browser mode with Chromium)
 devcontainer exec --workspace-folder . pnpm test
 
-# Run a single test file
+# Run one test file
 devcontainer exec --workspace-folder . pnpm exec vitest run __test__/ThreeParticle.spec.ts
 
-# Run tests with coverage
+# Run the tests with coverage
 devcontainer exec --workspace-folder . pnpm run coverage
 
-# Full build (TypeScript + demo page)
+# Build the TypeScript sources and the demo page into docs/demo/
 devcontainer exec --workspace-folder . pnpm run build
+
+# Serve the demo page with watch mode on container port 3000
+devcontainer exec --workspace-folder . pnpm run start:dev
+```
+
+The container publishes port 3000 on a random port of `127.0.0.1`. To find the port, run:
+
+```bash
+docker port "$(docker ps -q --filter label=devcontainer.local_folder="$PWD")" 3000
 ```

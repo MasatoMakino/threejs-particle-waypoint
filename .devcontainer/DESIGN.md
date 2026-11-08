@@ -1,4 +1,4 @@
-# DevContainer Design Notes
+# DevContainer design notes
 
 The container runs third-party package code. The configuration keeps that code away from code execution on the host and from directories above the project. The project is public, so the configuration does not try to keep the source in the container.
 
