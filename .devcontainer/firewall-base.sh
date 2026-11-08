@@ -139,8 +139,9 @@ fi
 
 echo "Host gateway detected as: $HOST_IP"
 
-# Accept only the published dev server port from the gateway. Other containers on the bridge stay unreachable.
-iptables -A INPUT -s "$HOST_IP/32" -p tcp --dport 3000 -j ACCEPT
+# Accept inbound TCP from the gateway only. The published ports in devcontainer.json decide which ports the host reaches.
+# Other containers on the bridge stay unreachable.
+iptables -A INPUT -s "$HOST_IP/32" -p tcp -j ACCEPT
 
 # Set default policies to DROP
 iptables -P INPUT DROP
