@@ -1,8 +1,10 @@
 #!/bin/bash
 # pnpm runner firewall configuration
 FIREWALL_ALLOW_SSH=false
+# pnpm-lock.yaml resolves every package from the npm registry
+FIREWALL_ALLOW_GITHUB=false
 
-# Shared: npm registry + ChromeDriver CDN (used by both containers)
+# npm registry + ChromeDriver CDN
 FIREWALL_DOMAINS="registry.npmjs.org storage.googleapis.com edgedl.me.gvt1.com"
 
 FIREWALL_VERIFY_URL="https://registry.npmjs.org/"
