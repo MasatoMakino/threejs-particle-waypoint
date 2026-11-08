@@ -71,5 +71,3 @@ esm/
 # Claude Code
 .claude/settings.local.json
 
-# pnpm store (bind-mounted DevContainer)
-.pnpm-store/
