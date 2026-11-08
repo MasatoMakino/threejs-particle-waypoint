@@ -10,7 +10,7 @@ ESM TypeScript library that provides Three.js particle animation along waypoint 
 
 ## Commands
 
-All pnpm commands must run inside the DevContainer.
+All pnpm commands must run inside the DevContainer. Each worktree has its own DevContainer. In a new worktree, run `devcontainer up --workspace-folder .` once before the other commands.
 
 ```bash
 # Build (TypeScript compilation to esm/)
