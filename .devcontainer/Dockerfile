@@ -25,4 +25,10 @@ RUN chmod +x /usr/local/bin/firewall-base.sh /usr/local/bin/init-firewall.sh && 
 
 RUN npm install -g pnpm@12.16.1
 
+# Docker copies this ownership into the empty node_modules volume on the first mount.
+ARG WORKSPACE_DIR
+RUN test -n "$WORKSPACE_DIR" && \
+    mkdir -p "$WORKSPACE_DIR/node_modules" && \
+    chown node:node "$WORKSPACE_DIR/node_modules"
+
 RUN node --version && pnpm --version && chromium --version && chromedriver --version

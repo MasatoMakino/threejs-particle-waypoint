@@ -1,15 +1,20 @@
 {
   "name": "${localWorkspaceFolderBasename} pnpm Runner (Node 22)",
-  "build": { "dockerfile": "Dockerfile" },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "WORKSPACE_DIR": "/workspaces/${localWorkspaceFolderBasename}" }
+  },
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
-  "initializeCommand": "mkdir -p .claude .idea",
+  "initializeCommand": "mkdir -p .claude .idea node_modules",
   "mounts": [
     "source=${localWorkspaceFolder}/.git,target=/workspaces/${localWorkspaceFolderBasename}/.git,type=bind,readonly",
     "source=${localWorkspaceFolder}/.devcontainer,target=/workspaces/${localWorkspaceFolderBasename}/.devcontainer,type=bind,readonly",
     "source=${localWorkspaceFolder}/.claude,target=/workspaces/${localWorkspaceFolderBasename}/.claude,type=bind,readonly",
     "source=${localWorkspaceFolder}/.idea,target=/workspaces/${localWorkspaceFolderBasename}/.idea,type=bind,readonly",
-    "source=${localWorkspaceFolder}/CLAUDE.md,target=/workspaces/${localWorkspaceFolderBasename}/CLAUDE.md,type=bind,readonly"
+    "source=${localWorkspaceFolder}/CLAUDE.md,target=/workspaces/${localWorkspaceFolderBasename}/CLAUDE.md,type=bind,readonly",
+    "source=${localWorkspaceFolder}/.github,target=/workspaces/${localWorkspaceFolderBasename}/.github,type=bind,readonly",
+    "source=${localWorkspaceFolderBasename}-node_modules,target=/workspaces/${localWorkspaceFolderBasename}/node_modules,type=volume"
   ],
   "remoteUser": "node",
   "runArgs": [
@@ -17,8 +22,6 @@
     "--cap-add=NET_RAW",
     "--shm-size=2g",
     "--name=${localWorkspaceFolderBasename}-pnpm-runner",
-    "--security-opt",
-    "seccomp=${localWorkspaceFolder}/.devcontainer/seccomp-chrome.json",
     "-p",
     "127.0.0.1:0:3000"
   ],

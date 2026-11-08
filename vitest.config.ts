@@ -17,7 +17,9 @@ export default defineConfig({
           // Removal condition: the provider switches frames in BiDi sessions.
           "wdio:enforceWebDriverClassic": true,
           "goog:chromeOptions": {
-            args: ["--use-gl=angle", "--use-angle=swiftshader"],
+            // The DevContainer keeps the default seccomp profile, which blocks the
+            // user namespaces that the Chromium sandbox needs.
+            args: ["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader"],
             ...(chromeBinary && { binary: chromeBinary }),
           },
           ...(chromedriverBinary && {
