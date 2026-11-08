@@ -1,4 +1,6 @@
 pnpm-lock.yaml
 .devcontainer/
+.github/
 .claude/
 CLAUDE.md
+AGENTS.md

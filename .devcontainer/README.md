@@ -4,14 +4,13 @@ Development container configuration for this project. The pnpm Runner container 
 
 ## Files
 
-| File                  | Description                                                    |
-| --------------------- | -------------------------------------------------------------- |
-| `devcontainer.json`   | Container configuration                                        |
-| `Dockerfile`          | Image (Node 22 + pnpm + Chromium + firewall tools)             |
-| `firewall-base.sh`    | iptables firewall logic                                        |
-| `init-firewall.sh`    | Firewall domain allowlist                                      |
-| `seccomp-chrome.json` | Custom seccomp profile for Chrome sandbox without SYS_ADMIN    |
+| File                | Description                                        |
+| ------------------- | -------------------------------------------------- |
+| `devcontainer.json` | Container configuration                            |
+| `Dockerfile`        | Image (Node 22 + pnpm + Chromium + firewall tools) |
+| `firewall-base.sh`  | iptables firewall logic                            |
+| `init-firewall.sh`  | Firewall domain allowlist                          |
 
 ## Design Decisions
 
-See [DESIGN.md](DESIGN.md) for rationale on security choices, including the custom seccomp profile.
+For the rationale of the security choices, see [DESIGN.md](DESIGN.md).

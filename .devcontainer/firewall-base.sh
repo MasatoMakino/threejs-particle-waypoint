@@ -137,12 +137,10 @@ if [ -z "$HOST_IP" ]; then
     exit 1
 fi
 
-HOST_NETWORK=$(echo "$HOST_IP" | sed "s/\.[0-9]*$/.0\/24/")
-echo "Host network detected as: $HOST_NETWORK"
+echo "Host gateway detected as: $HOST_IP"
 
-# Set up remaining iptables rules
-iptables -A INPUT -s "$HOST_NETWORK" -j ACCEPT
-iptables -A OUTPUT -d "$HOST_NETWORK" -j ACCEPT
+# Accept only the published dev server port from the gateway. Other containers on the bridge stay unreachable.
+iptables -A INPUT -s "$HOST_IP/32" -p tcp --dport 3000 -j ACCEPT
 
 # Set default policies to DROP
 iptables -P INPUT DROP
