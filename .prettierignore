@@ -3,3 +3,4 @@ pnpm-lock.yaml
 .github/
 .claude/
 CLAUDE.md
+AGENTS.md

@@ -6,13 +6,13 @@
   },
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
-  "initializeCommand": "mkdir -p .claude .idea node_modules",
+  "initializeCommand": "mkdir -p .claude node_modules && touch AGENTS.md",
   "mounts": [
     "source=${localWorkspaceFolder}/.git,target=/workspaces/${localWorkspaceFolderBasename}/.git,type=bind,readonly",
     "source=${localWorkspaceFolder}/.devcontainer,target=/workspaces/${localWorkspaceFolderBasename}/.devcontainer,type=bind,readonly",
     "source=${localWorkspaceFolder}/.claude,target=/workspaces/${localWorkspaceFolderBasename}/.claude,type=bind,readonly",
-    "source=${localWorkspaceFolder}/.idea,target=/workspaces/${localWorkspaceFolderBasename}/.idea,type=bind,readonly",
     "source=${localWorkspaceFolder}/CLAUDE.md,target=/workspaces/${localWorkspaceFolderBasename}/CLAUDE.md,type=bind,readonly",
+    "source=${localWorkspaceFolder}/AGENTS.md,target=/workspaces/${localWorkspaceFolderBasename}/AGENTS.md,type=bind,readonly",
     "source=${localWorkspaceFolder}/.github,target=/workspaces/${localWorkspaceFolderBasename}/.github,type=bind,readonly",
     "source=${localWorkspaceFolderBasename}-node_modules,target=/workspaces/${localWorkspaceFolderBasename}/node_modules,type=volume"
   ],
@@ -25,7 +25,7 @@
     "-p",
     "127.0.0.1:0:3000"
   ],
-  "postCreateCommand": "pnpm install --frozen-lockfile",
+  "postCreateCommand": "sudo /usr/local/bin/init-firewall.sh && pnpm install --frozen-lockfile",
   "postStartCommand": "sudo /usr/local/bin/init-firewall.sh && (pnpm audit --audit-level=moderate || true)",
   "containerEnv": {
     "NODE_ENV": "development"

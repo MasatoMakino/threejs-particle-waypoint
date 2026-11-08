@@ -60,6 +60,8 @@ typings/
 # next.js build output
 .next
 .idea
+# Created empty by the DevContainer initializeCommand for its read-only mount
+AGENTS.md
 *.tsbuildinfo
 docs/
 lib/
@@ -70,4 +72,3 @@ esm/
 
 # Claude Code
 .claude/settings.local.json
-
