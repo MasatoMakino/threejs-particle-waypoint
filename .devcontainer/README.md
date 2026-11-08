@@ -7,7 +7,7 @@ Development container configuration for this project. The pnpm Runner container 
 | File                  | Description                                                    |
 | --------------------- | -------------------------------------------------------------- |
 | `devcontainer.json`   | Container configuration                                        |
-| `Dockerfile`          | Image (Node 22 + pnpm + Chromium + xvfb + firewall tools)      |
+| `Dockerfile`          | Image (Node 22 + pnpm + Chromium + firewall tools)             |
 | `firewall-base.sh`    | iptables firewall logic                                        |
 | `init-firewall.sh`    | Firewall domain allowlist                                      |
 | `seccomp-chrome.json` | Custom seccomp profile for Chrome sandbox without SYS_ADMIN    |
