@@ -8,4 +8,7 @@ FIREWALL_DOMAINS="registry.npmjs.org"
 
 FIREWALL_VERIFY_URL="https://registry.npmjs.org/"
 FIREWALL_VERIFY_NAME="npm registry"
+
+# The demo-showcase dev server port, published in devcontainer.json
+FIREWALL_INBOUND_PORTS="3000"
 source /usr/local/bin/firewall-base.sh

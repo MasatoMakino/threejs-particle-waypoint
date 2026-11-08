@@ -8,6 +8,9 @@
 #   FIREWALL_VERIFY_NAME  - Human-readable name for verification output
 #   FIREWALL_ALLOW_SSH    - "true" to allow outbound SSH (port 22)
 #   FIREWALL_ALLOW_GITHUB - "true" to allow the GitHub web, API, and git IP ranges
+#
+# Optional variables:
+#   FIREWALL_INBOUND_PORTS - Space-separated container ports that the host reaches through the published ports
 
 set -euo pipefail
 IFS=$'\n\t'
@@ -139,8 +142,16 @@ fi
 
 echo "Host gateway detected as: $HOST_IP"
 
-# Accept only the published dev server port from the gateway. Other containers on the bridge stay unreachable.
-iptables -A INPUT -s "$HOST_IP/32" -p tcp --dport 3000 -j ACCEPT
+# Accept only the published ports from the gateway. Other containers on the bridge stay unreachable.
+IFS=' ' read -ra inbound_ports <<< "${FIREWALL_INBOUND_PORTS:-}"
+for port in "${inbound_ports[@]}"; do
+    if [[ ! "$port" =~ ^[0-9]{1,5}$ ]]; then
+        echo "ERROR: Invalid port in FIREWALL_INBOUND_PORTS: $port"
+        exit 1
+    fi
+    echo "Accepting inbound port $port from $HOST_IP"
+    iptables -A INPUT -s "$HOST_IP/32" -p tcp --dport "$port" -j ACCEPT
+done
 
 # Set default policies to DROP
 iptables -P INPUT DROP

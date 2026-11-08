@@ -24,4 +24,4 @@ The container keeps the Docker default seccomp profile, which blocks unprivilege
 
 ## Firewall
 
-Outbound traffic goes only to DNS and the allowlisted domains. The host services on `127.0.0.1` (reachable through `host.docker.internal`) and the other containers on the Docker bridge stay unreachable. Inbound traffic is accepted only on port 3000 from the gateway, for the published dev server port.
+Outbound traffic goes only to DNS and the allowlisted domains. The host services on `127.0.0.1` (reachable through `host.docker.internal`) and the other containers on the Docker bridge stay unreachable. Inbound traffic is accepted only from the gateway, on the ports in `FIREWALL_INBOUND_PORTS` of `init-firewall.sh`. Each port matches a port that `devcontainer.json` publishes.
