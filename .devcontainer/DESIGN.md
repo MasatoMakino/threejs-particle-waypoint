@@ -24,4 +24,20 @@ The container keeps the Docker default seccomp profile, which blocks unprivilege
 
 ## Firewall
 
-Outbound traffic goes only to DNS and the allowlisted domains. The host services on `127.0.0.1` (reachable through `host.docker.internal`) and the other containers on the Docker bridge stay unreachable. Inbound traffic is accepted only from the gateway, on the ports in `FIREWALL_INBOUND_PORTS` of `init-firewall.sh`. Each port matches a port that `devcontainer.json` publishes.
+Outbound traffic goes only to DNS and the allowlisted domains. The host services on `127.0.0.1` (reachable through `host.docker.internal`) and the other containers on the Docker bridge stay unreachable. Inbound TCP is accepted only from the gateway. The published ports in `devcontainer.json` decide which container ports the host reaches.
+
+## Worktrees
+
+Each worktree gets its own container. Put a worktree in `.claude/worktrees/`, or outside the project, and run `devcontainer up --workspace-folder <worktree>`. A worktree elsewhere in the project is writable from the container of the main tree, and its `.git` file, `.claude`, and `CLAUDE.md` would reach the host. `.claude/worktrees/` is inside the read-only `.claude` mount.
+
+The container name and the `node_modules` volume include `${devcontainerId}`, which the devcontainer CLI derives from the folder path. Worktrees with the same folder name in other projects get their own volumes. The git hooks find the container by its `devcontainer.local_folder` label.
+
+To remove a worktree, remove its container and volume first:
+
+```bash
+C=$(docker ps -aq --filter label=devcontainer.local_folder=<worktree>)
+V=$(docker inspect -f '{{range .Mounts}}{{if eq .Type "volume"}}{{.Name}} {{end}}{{end}}' "$C")
+docker rm -f "$C"
+docker volume rm $V
+git worktree remove <worktree>
+```
