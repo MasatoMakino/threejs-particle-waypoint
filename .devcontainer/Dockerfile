@@ -14,8 +14,6 @@ RUN set -eux; \
         iptables ipset iproute2 dnsutils aggregate jq \
         chromium \
         chromium-driver \
-        xauth \
-        xvfb \
     ; \
     rm -rf /var/lib/apt/lists/*
 
