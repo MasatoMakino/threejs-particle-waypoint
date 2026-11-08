@@ -4,7 +4,7 @@ The container runs third-party package code. The configuration keeps that code a
 
 ## Read-only mounts
 
-The container mounts `.git`, `.devcontainer`, `.github`, `.claude`, `CLAUDE.md`, and `AGENTS.md` read-only. The host runs or loads these files (git hooks, git config, the container configuration, CI workflows, agent settings and instructions). The workspace stays writable for `pnpm add` and for the `prettier --write` pre-commit hook.
+The container mounts `.git`, `.devcontainer`, `.github`, `.claude`, `.vscode`, `CLAUDE.md`, and `AGENTS.md` read-only. The host runs or loads these files (git hooks, git config, the container configuration, CI workflows, agent settings and instructions, editor tasks and settings). The workspace stays writable for `pnpm add` and for the `prettier --write` pre-commit hook.
 
 ## pnpm settings
 
