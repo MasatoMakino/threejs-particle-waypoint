@@ -11,7 +11,6 @@ RUN set -eux; \
         ca-certificates \
         curl \
         sudo \
-        unzip \
         iptables ipset iproute2 dnsutils aggregate jq \
         chromium \
         chromium-driver \
