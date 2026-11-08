@@ -3,6 +3,14 @@
   "build": { "dockerfile": "Dockerfile" },
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+  "initializeCommand": "mkdir -p .claude .idea",
+  "mounts": [
+    "source=${localWorkspaceFolder}/.git,target=/workspaces/${localWorkspaceFolderBasename}/.git,type=bind,readonly",
+    "source=${localWorkspaceFolder}/.devcontainer,target=/workspaces/${localWorkspaceFolderBasename}/.devcontainer,type=bind,readonly",
+    "source=${localWorkspaceFolder}/.claude,target=/workspaces/${localWorkspaceFolderBasename}/.claude,type=bind,readonly",
+    "source=${localWorkspaceFolder}/.idea,target=/workspaces/${localWorkspaceFolderBasename}/.idea,type=bind,readonly",
+    "source=${localWorkspaceFolder}/CLAUDE.md,target=/workspaces/${localWorkspaceFolderBasename}/CLAUDE.md,type=bind,readonly"
+  ],
   "remoteUser": "node",
   "runArgs": [
     "--cap-add=NET_ADMIN",
