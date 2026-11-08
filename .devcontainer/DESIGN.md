@@ -6,8 +6,6 @@ The container runs third-party package code. The configuration keeps that code a
 
 The container mounts `.git`, `.devcontainer`, `.github`, `.claude`, `CLAUDE.md`, and `AGENTS.md` read-only. The host runs or loads these files (git hooks, git config, the container configuration, CI workflows, agent settings and instructions). The workspace stays writable for `pnpm add` and for the `prettier --write` pre-commit hook.
 
-`initializeCommand` creates an empty `AGENTS.md` when the file is missing, because a bind mount needs an existing source.
-
 ## pnpm settings
 
 The image sets `pnpm_config_ignore_scripts` and `pnpm_config_ignore_pnpmfile`. Code that a dependency plants in the workspace (a root lifecycle script or `.pnpmfile.cjs`) does not run on the next install. `pnpm run` still runs the named script.

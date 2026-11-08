@@ -6,7 +6,7 @@
   },
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
-  "initializeCommand": "mkdir -p .claude node_modules && touch AGENTS.md",
+  "initializeCommand": "mkdir -p .claude node_modules",
   "mounts": [
     "source=${localWorkspaceFolder}/.git,target=/workspaces/${localWorkspaceFolderBasename}/.git,type=bind,readonly",
     "source=${localWorkspaceFolder}/.devcontainer,target=/workspaces/${localWorkspaceFolderBasename}/.devcontainer,type=bind,readonly",
