@@ -1,24 +1,20 @@
-FROM node:22-bookworm-slim
+FROM node:22-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d
 
 ENV DEBIAN_FRONTEND=noninteractive
+# The Debian packages pair chromium-driver with chromium, so tests need no driver download.
+ENV CHROME_BIN=/usr/bin/chromium \
+    CHROMEDRIVER_BIN=/usr/bin/chromedriver
 
 RUN set -eux; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         ca-certificates \
         curl \
-        gnupg \
         sudo \
         unzip \
         iptables ipset iproute2 dnsutils aggregate jq \
-    ; \
-    curl -fsSL https://dl.google.com/linux/linux_signing_key.pub \
-        | gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg; \
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/google-chrome.gpg] https://dl.google.com/linux/chrome/deb/ stable main" \
-        > /etc/apt/sources.list.d/google-chrome.list; \
-    apt-get update; \
-    apt-get install -y --no-install-recommends \
-        google-chrome-stable \
+        chromium \
+        chromium-driver \
         xauth \
         xvfb \
     ; \
@@ -32,4 +28,4 @@ RUN chmod +x /usr/local/bin/firewall-base.sh /usr/local/bin/init-firewall.sh && 
 
 RUN npm install -g pnpm@12.16.1
 
-RUN node --version && pnpm --version && google-chrome --version
+RUN node --version && pnpm --version && chromium --version && chromedriver --version
