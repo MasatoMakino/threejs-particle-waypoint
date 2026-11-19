@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim@sha256:de170b39439eb0e5a3444ad7d60b015614a381e10fecae2e30ec9e735122f38d
+FROM node:26-bookworm-slim@sha256:5df79989ed685e09f0a98019db4cebfb22fb9df1a53c0161664a011f7ff6b0f1
 
 ENV DEBIAN_FRONTEND=noninteractive
 # The Debian packages pair chromium-driver with chromium, so tests need no driver download.
